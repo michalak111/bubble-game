@@ -8,7 +8,6 @@ body {
   top: 0;
   width: 1000px;
   height: 738px;
-
 }
 
 #top_bar {
@@ -30,6 +29,14 @@ body {
   background-color: #fff;
   clip: auto;
   overflow: hidden;
+}
+
+#board {
+  position: absolute;
+  left: 120px;
+  top: 0;
+  width: 760px;
+  height: 620px;
 }
 
 #footer_bar {
@@ -83,15 +90,4 @@ body {
 
 #start_game {
   display: block;
-}
-
-.bubble {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background: red;
-  border-radius: 50%;
-  position: absolute;
-  left: 500px;
-  top: calc(100% - 30px);
 }

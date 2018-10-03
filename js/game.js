@@ -13,15 +13,16 @@ class Game {
     UI.hideDialog();
     $('.but_start_game').unbind('click');
     this.currentBubble = this.getNewBubble();
-    $('#game').on('click', (e) => {
+    $('#board').on('click', (e) => {
       const {offsetX, offsetY} = e
-      this.currentBubble.changePosition(offsetX - 10, offsetY - 10)
+      this.currentBubble.changePosition(offsetX - 25, offsetY - 25)
     })
   }
 
   getNewBubble () {
     const bubble = new Bubble();
-    $('#game').append(bubble.el);
+    bubble.el.addClass('bubble--current')
+    $('#board').append(bubble.el);
     return bubble;
   }
 }
