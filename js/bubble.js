@@ -1,18 +1,27 @@
 import $ from 'jquery'
 
-class Buble {
+class Bubble {
   constructor () {
-    this.init()
+    this.el = this.init();
   }
 
   init () {
-    let bubble = $(document.createElement('span'));
+    const bubble = $(document.createElement('span'));
     bubble.addClass('bubble');
-    $('#game').append(bubble);
-    bubble.on('click', function () {
-      $(this).animate({'bottom': 100}, 100)
-    })
+    return bubble;
+  }
+
+  changePosition (x, y) {
+    this._el.animate({'top': y, 'left': x})
+  }
+
+  get el () {
+    return this._el
+  }
+
+  set el (el) {
+    this._el = el;
   }
 }
 
-export default Buble
+export default Bubble

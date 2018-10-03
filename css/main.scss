@@ -92,7 +92,6 @@ body {
   background: red;
   border-radius: 50%;
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 500px;
+  top: calc(100% - 30px);
 }
