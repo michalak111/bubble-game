@@ -22,6 +22,14 @@ class Bubble {
   set el (el) {
     this._el = el;
   }
+
+  setCurrent () {
+    this.el.addClass('bubble--current');
+  }
+
+  removeCurrent () {
+    this.el.removeClass('bubble--current');
+  }
 }
 
 export default Bubble

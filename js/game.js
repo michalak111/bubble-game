@@ -4,26 +4,29 @@ import Bubble from './bubble.js'
 
 class Game {
   currentBubble = null;
+  UI = new UI();
 
   init () {
-    $('.but_start_game').bind('click', () => this.runGame())
+    $('.but_start_game').bind('click', () => this.startGame())
   }
 
-  runGame () {
-    UI.hideDialog();
+  startGame () {
     $('.but_start_game').unbind('click');
-    this.currentBubble = this.getNewBubble();
-    $('#board').on('click', (e) => {
-      const {offsetX, offsetY} = e
-      this.currentBubble.changePosition(offsetX - 25, offsetY - 25)
-    })
+    this.UI.hideDialog();
+    this.currentBubble = this.getNextBubble();
+    $('#game').bind("click", (e) => this.clickGameScreen(e));
   }
 
-  getNewBubble () {
+  getNextBubble () {
     const bubble = new Bubble();
-    bubble.el.addClass('bubble--current')
+    bubble.setCurrent();
     $('#board').append(bubble.el);
     return bubble;
+  }
+
+  clickGameScreen (e) {
+    const angle = this.UI.getBubbleAngle(this.currentBubble.el, e);
+    console.log(angle)
   }
 }
 
