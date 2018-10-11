@@ -26,7 +26,6 @@ class Game {
 
   clickGameScreen (e) {
     const angle = this.UI.getBubbleAngle(this.currentBubble.el, e);
-    console.log(angle)
   }
 }
 
